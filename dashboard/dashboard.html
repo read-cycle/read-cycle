@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Exchange | Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel = "stylesheet" href = "/dashboard/forest.css" class = "theme-stylesheet">
+</head>
+<body>
+
+  <div class = "loadingScreen">
+    <div class = "loadingSymbol">
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item logo">
+        <a href="#" class="nav-link logo-link">
+          <span class="link-text logo-text">ibxc</span>
+          <i class="fa-solid fa-angles-right"></i>
+        </a>
+      </li>
+
+      <li class="nav-item" onclick = "window.location.href = '../dashboard/dashboard.html'">
+        <a href="#" class="nav-link">
+            <i class="fa-solid fa-house"></i>
+          <span class="link-text">Home</span>
+        </a>
+      </li>
+
+      <li class="nav-item" onclick = "window.location.href = '../buyers/buyers.html'">
+        <a href="#" class="nav-link">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="link-text">Search</span>
+        </a>
+      </li>
+
+      <li class="nav-item" onclick = "window.location.href = '../sellers/sellers.html'">
+        <a href="#" class="nav-link">
+            <i class="fa-solid fa-upload"></i>  
+          <span class="link-text">Upload</span>
+        </a>
+      </li>
+
+      <li class="nav-item" onclick = "window.location.href = '../chats/chats.html'">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-comment"></i>
+          <span class="link-text">Chats</span>
+        </a>
+      </li>
+
+      <li class="nav-item" style = "margin-top: auto; position: relative;" id = "notification-item-nav">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-bell"></i>
+          <span class="link-text">Notifications</span>
+        </a>
+        <div class = "notifications-container">
+          
+        </div>
+      </li>
+
+      <li class="nav-item" id="themeButton" style = "cursor: pointer;">
+        <a class="nav-link theme-link">
+          <i class="fa-solid fa-moon" id = "toggleIcon"></i>
+          <span class = "link-text">Themer</span>
+        </a>
+      </li>
+
+                
+      <li class="nav-item log-out-item">
+        <a href="#" class="nav-link">
+          <i class="fas fa-sign-out"></i>
+          <span class="link-text">Log Out</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+    <main>
+        <div class="grid-container">
+            <div class="grid-item box-large" data-aos="fade-right" data-aos-duration="500">
+                <div class = "header-box-large">
+                    <h1 class = "userNameBox">Welcome Back, !</h1>
+                    <p>Search and Upload your books easily!</p>
+                    <div class = "buttonContainer">
+                        <button class = "buttonContainerBtn">Search For Books  <i class="fa-solid fa-chevron-right"></i></button>
+                        <button class = "buttonContainerBtn">Upload a Book  <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <h2 style = "margin-top: 2%; margin-left: 3%;">Your Requests</h2>
+
+                <div class = "card-container">
+                  <div class = "card" onclick = 'window.location.href = "/buyers/buyers.html"'>
+                    <div class = "card-header">
+                      <p>Your Pending Requests</p>
+                      <div class = "header-image">
+                      </div>
+                    </div>
+                    <div class = "background-image-faded">
+                    </div>
+                    <div class = "overlayNone">
+                      <i class="fa-solid fa-magnifying-glass-plus"></i>
+                      <p>Upload a Buyer Request for it to show up here...</p>
+                    </div>
+                    <h2 class = "jsUpdateHeader"></h2>
+                    <div class = "card-footer">
+                      <div style = "display: flex; justify-content: center; width: 100%;">
+                        <div class = "specialText"><p class = 'extraText'></p><div class = "underlineFancy"></div></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class = "card" onclick = 'window.location.href = "/sellers/sellers.html"'>
+                    <div class = "card-header">
+                      <p>Your Pending Sells</p>
+                      <div class = "header-image">
+                      </div>
+                    </div>
+                    <div class = "background-image-faded">
+                    </div>
+                    <div class = "overlayNone">
+                      <i class="fa-solid fa-magnifying-glass-plus"></i>
+                      <p>Upload a Seller Request for it to show up here...</p>
+                    </div>
+                    <h2 class = "jsUpdateHeader"></h2>
+                    <div class = "card-footer">
+                      <div style = "display: flex; justify-content: center; width: 100%;">
+                        <div class = "specialText"><p class = "extraText" onclick = 'window.location.href = "/sellers/sellers.html"'></p><div class = "underlineFancy"></div></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class = "card">
+                    <div class = "card-header">
+                      <p>Your Pending Matches</p>
+                      <div class = "header-image">
+                      </div>
+                    </div>
+                    <div class = "background-image-faded">
+                    </div>
+                    <div class = "overlayNone">
+                      <i class="fa-solid fa-magnifying-glass-plus"></i>
+                      <p>Matched Requests show up here...</p>
+                    </div>
+                    <h2 class = "jsUpdateHeader"></h2>
+                    <div class = "card-footer">
+                      <div style = "display: flex; justify-content: center; width: 100%;">
+                        <div class = "specialText"><p class = "extraText"></p><div class = "underlineFancy"></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <h2 style = "margin-top: 2%; margin-left: 3%;">Recent Requests</h2>
+
+                <div class = "card-container">
+                  <div class = "card">
+                    <div class = "card-header">
+                      <p>Recent Buyer Requests</p>
+                      <div class = "header-image">
+                      </div>
+                    </div>
+                    <div class = "background-image-faded">
+                    </div>
+                    <div class = "overlayNone">
+                      <i class="fa-solid fa-magnifying-glass-plus"></i>
+                      <p>No recent buyer requests!</p>
+                    </div>
+                    <h2 class = "buyer-req-card-recent"></h2>
+                    <div class = "card-footer">
+                      <div style = "display: flex; justify-content: center; width: 100%;">
+                        <div class = "specialText"><p class = "extraText"></p><div class = "underlineFancy"></div></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class = "card">
+                    <div class = "card-header">
+                      <p>Recent Seller Requests</p>
+                      <div class = "header-image">
+                      </div>
+                    </div>
+                    <div class = "background-image-faded">
+                    </div>
+                    <div class = "overlayNone">
+                      <i class="fa-solid fa-magnifying-glass-plus"></i>
+                      <p>No recent seller requests!</p>
+                    </div>
+                    <h2 class = "seller-req-card-recent"></h2>
+                    <div class = "card-footer">
+                      <div style = "display: flex; justify-content: center; width: 100%;">
+                        <div class = "specialText"><p class = "extraText"></p><div class = "underlineFancy"></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="grid-item box-medium" data-aos="fade-left" data-aos-duration="500">
+              <div class = "not-found-div not-found-div-table">
+                <div class = "not-found-text">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                  <h3>Upload a request...</h3>
+                </div>
+              </div>
+              <div class = "table-container">
+                <div class = "table-header">
+                    <h2>Your Pending Matched Pequests</h2>
+                </div>
+                <div class = "table-content">
+                  <div class = "table-item">
+                    <div class = "table-item-img">
+                      <i class="fa-solid fa-dna"></i>
+                    </div>
+                    <div class = "table-item-text">
+                      <p class = "table-item-text-header">Biology Textbook</p>
+                      <p>Grade 9</p>
+                    </div>
+                    <p style = "margin-left: auto;">17/9/23</p>
+                  </div>
+                  <div class = "table-item">
+                  <div class = "table-item-img">
+                    <i class="fa-solid fa-dna"></i>
+                  </div>
+                  <div class = "table-item-text">
+                    <p class = "table-item-text-header">Biology Textbook</p>
+                    <p>Grade 9</p>
+                  </div>
+                  <p style = "margin-left: auto;">17/9/23</p>
+                  </div>
+                  <div class = "table-item">
+                <div class = "table-item-img">
+                  <i class="fa-solid fa-dna"></i>
+                </div>
+                <div class = "table-item-text">
+                  <p class = "table-item-text-header">Biology Textbook</p>
+                  <p>Grade 9</p>
+                </div>
+                <p style = "margin-left: auto;">17/9/23</p>
+                  </div>
+                  <div class = "table-item">
+              <div class = "table-item-img">
+                <i class="fa-solid fa-dna"></i>
+              </div>
+              <div class = "table-item-text">
+                <p class = "table-item-text-header">Biology Textbook</p>
+                <p>Grade 9</p>
+              </div>
+              <p style = "margin-left: auto;">17/9/23</p>
+                  </div>
+                  <div class = "table-item">
+            <div class = "table-item-img">
+              <i class="fa-solid fa-dna"></i>
+            </div>
+            <div class = "table-item-text">
+              <p class = "table-item-text-header">Biology Textbook</p>
+              <p>Grade 9</p>
+            </div>
+            <p style = "margin-left: auto;">17/9/23</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item box-medium-2" data-aos="fade-left" data-aos-duration="500">
+              <div class = "buyers-notification-box">
+                <i class="fa-solid fa-upload"></i>  
+                <h2>Clearing up space?</h2>
+                <p>Upload a request on our sellers page!</p>
+                <button class = "buttonContainerBtn">Let's Go!  <i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <script>
+      AOS.init();
+    </script>  
+    <script defer src = "/dashboard/dashboard.js"></script>
+</body>
+</html>

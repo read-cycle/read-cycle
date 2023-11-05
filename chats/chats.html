@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Book Exchange | Chats</title>
+</head>
+<body>
+
+  <div class = "loadingScreen">
+    <div class = "loadingSymbol">
+    </div>
+  </div>
+
+    <nav class="navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item logo">
+            <a href="#" class="nav-link logo-link">
+              <span class="link-text logo-text">ibxc</span>
+              <i class="fa-solid fa-angles-right"></i>
+            </a>
+          </li>
+    
+          <li class="nav-item" onclick = "window.location.href = '../dashboard/dashboard.html'">
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-house"></i>
+              <span class="link-text">Home</span>
+            </a>
+          </li>
+    
+          <li class="nav-item" onclick = "window.location.href = '../buyers/buyers.html'">
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span class="link-text">Search</span>
+            </a>
+          </li>
+    
+          <li class="nav-item" onclick = "window.location.href = '../sellers/sellers.html'">
+            <a href="#" class="nav-link">
+                <i class="fa-solid fa-upload"></i>  
+              <span class="link-text">Upload</span>
+            </a>
+          </li>
+
+          <li class="nav-item" onclick = "window.location.href = '../chats/chats.html'">
+            <a href="#" class="nav-link">
+              <i class="fa-solid fa-comment"></i>
+              <span class="link-text">Chats</span>
+            </a>
+          </li>
+    
+          <li class="nav-item" id="themeButton" style = "cursor: pointer; margin-top: auto;">
+            <a class="nav-link">
+            
+            <i class="fa-solid fa-moon" id = "lightToggle"></i>
+    
+            <span class = "link-text">Themer</span>
+            </a>
+          </li>
+
+                    
+          <li class="nav-item log-out-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-sign-out"></i>
+              <span class="link-text">Log Out</span>
+            </a>
+          </li>
+        </ul>
+    </nav>
+
+    <main>
+      <div class = "chat-nav-container">
+        <div class = "chat-nav">
+          <div class = "chat-nav-header">
+            <h2>Buyer Chats</h2>
+            <i class="fa-solid fa-comment chat-nav-header-icon"></i>
+            <i class="fa-solid fa-chevron-down chat-nav-minimize"></i>
+          </div>
+          <ul class = "chat-nav-ul">
+
+          </ul>
+        </div>
+        <div class = "chat-nav">
+          <div class = "chat-nav-header">
+            <h2>Seller Chats</h2>
+            <i class="fa-solid fa-comment chat-nav-header-icon"></i>
+            <i class="fa-solid fa-chevron-down chat-nav-minimize"></i>
+          </div>
+          <ul class = "chat-nav-ul">
+
+          </ul>
+        </div>
+      </div>
+      <div class = "chat-messages-container">
+        <div class = "chat-header">
+          <div>
+            <h1 class = "chat-header-h1"></h1>
+            <p class = "chat-header-book"></p>
+          </div>
+          <p class = "chat-header-grade chat-header-grade-main"></p>
+        </div>
+        <div class = 'chat-messages'>
+
+        </div>
+        <div class = "input-box">
+          <input class = "chat-input" placeholder="Send...">
+          <button class = "chat-btn"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </main>
+
+    <script src = "/chats/chats.js"></script>
+</body>
+</html>

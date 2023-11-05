@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0a0a0a;
+}
+
+.mainDiv {
+    background-color: #121212;
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 50px #121212;
+    position: relative;
+}
+
+.carouselContainer {
+    width: 54.55%;
+    background-color: #1f1f1f;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    transition: left 1s ease;
+    z-index: 3;
+}
+
+.formContainer {
+    width: 45.45%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    transition: width 1s ease;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    background-image: url(download.png);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-position: center center;
+}
+
+.centerLogoForm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: auto;
+}
+
+.centerForm {
+    margin-top: 2.5rem;
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    padding: 0.5rem;
+    padding-left: 0.25rem;
+    width: 100%;
+    border: none;
+    border-bottom: white 1px solid;
+    margin-left: 5px;
+    background: none;
+    outline: none;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 10px;
+}
+
+label {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.hrBox {
+    display: flex;
+    align-items: center;
+}
+
+.divider-line {
+    display: inline-block;
+    width: 100px;
+    height: 1.1px;
+    background-color: white;
+}
+
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+.logInBtn {
+    border: none;
+    padding: 0.75rem;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    border-radius: 10px;
+    background-color: #df49a6;
+    cursor: pointer;
+}
+
+.specialText {
+    cursor: pointer;
+    position: relative;
+}
+
+.underlineFancy {
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    left: 0;
+    background-color: white;
+    bottom: -2px;
+    transition: width 1s ease;
+    z-index: 1;
+}
+
+.specialText:hover .underlineFancy {
+    width: 100%;
+}
+
+.googleSignInBtn {
+    width: 50px;
+    height: 50px;
+    background-color: #df49a6;
+    border: 1px black solid;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+}

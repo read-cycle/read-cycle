@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>    
+    <link rel="stylesheet" href="brightLogin.css" class = "theme-stylesheet">
+    <title>Book Exchange | Login</title>
+</head>
+<body>
+    <div class = "mainDiv">
+            <div class = "formContainer signUpContainer">
+                <div class = "centerLogoForm">
+                    <h2>Sign Up to Book Exchange</h2>
+                </div>
+                <div class = "centerForm">
+                    <label>Sign Up using Google</label>
+                    <button class = "googleSignInBtn" onclick = "signInWithGoogle()"><i class="fa-brands fa-google"></i></button>
+                    <div class = "hrBox">
+                        <div class = "divider-line"></div>
+                        <label class = "divider-text" style = "margin: 5px;">or</label>
+                        <div class = "divider-line"></div>
+                    </div>
+                    <div class="inputBox">
+                        <label>Email</label>
+                        <input placeholder="Email" id = "emailS" type = "email">
+                    </div>
+
+                    <div class="inputBox">
+                        <label>Name</label>
+                        <input placeholder="Name" id = "name" type = "text">
+                    </div>
+                    
+                    <div class = "inputBox">
+                        <label>Password</label>
+                        <input placeholder = 'Password' id = "passwordS" type = "password">
+                    </div>
+                    <div class = "buttonContainer">
+                        <button class = "logInBtn" onclick = "SignUpButton()">Sign Up</button>
+                        </label>
+                    </div>
+                    <label class = "signUpLink" style = "margin-top: 20px;">Already have an account? <span class = "specialText" id="logInLink">Log In <div class = "underlineFancy"></div></span></label>
+                </div>
+            </div>
+
+            <div class = "carouselContainer">
+                <div class="container">
+
+                  </div>
+            </div>
+            <div class = "formContainer logInContainer">
+                <div class = "centerLogoForm">
+                    <h2>Log In to Book Exchange</h2>
+                </div>
+                <div class = "centerForm">
+                    <label>Log In using Google</label>
+                    <button class = "googleSignInBtn" onclick = "signInWithGoogle()"><i class="fa-brands fa-google"></i></button>
+                    <div class = "hrBox">
+                        <div class = "divider-line"></div>
+                        <label class = "divider-text" style = "margin: 5px;">or</label>
+                        <div class = "divider-line"></div>
+                    </div>
+                    <div class="inputBox">
+                        <label>Email</label>
+                        <input placeholder="Email" id = "emailL" type = "email">
+                    </div>
+                    
+                    <div class = "inputBox">
+                        <label>Password</label>
+                        <input placeholder = 'Password' id = "passwordL" type = "password">
+                    </div>
+                    <div class = "buttonContainer">
+                        <button class = "logInBtn" onclick = "SignInButton()">Log In</button>
+                    </div>
+                    <label class = "signUpLink" style = "margin-top: 20px;">Already have an account? <span class = "specialText" id="signUpLink">Sign Up <div class = "underlineFancy"></div></span></label>
+                </div>
+        </div>
+    </div>
+
+
+
+    <script defer src = "/login/login.js"></script>
+</body>
+</html>

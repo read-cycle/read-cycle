@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" class="theme-stylesheet" href="/landingPage/forest.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item logo-item"><i class="fa-solid fa-book"></i><a href="#" class="nav-link logo-link">Book Exchange</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+            <button class = "themeSwitcher">
+              <div class = "themeIndicator"></div><i class="fa-solid fa-chevron-down"></i>
+              <div class = "themesDiv">
+                <a class = "themeItem bright"><i class="fa-solid fa-mountain-sun" style = "color: #b8b8b8;"></i>Metallic</a>
+                <a class = "themeItem dark"><i class="fa-solid fa-fire" style = "color: #df49a6;"></i>Charcoal</a>
+                <a class = "themeItem forest"><i class="fa-solid fa-tree" style = "color: #557A46;"></i>Forest</a></div>
+            </button>
+            <button class = "portalBtn signUpBtn" onclick = "window.location.href = '/login/login.html'">Sign Up</button>
+            <button class = "portalBtn logInBtn" onclick = "window.location.href = '/login/login.html'">Log In</button>
+        </ul>
+    </nav>
+
+    <main>
+        <div class = "mainDiv">
+            <div class = "halfDiv">
+                <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" style = "display: flex; flex-direction: column; row-gap: 20px;">
+                    <div>
+                        <h1 style = "font-size: 55px;">Gently used books,</h1>
+                        <h2 style = "font-size: 45px;">at your fingertips</h2>
+                    </div>
+                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    <button class = "redirectBtn" onclick = "window.location.href = '/login/login.html'">Get Started <i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <div class = "halfDiv" style = "padding: 0;">
+                <div class = "book-container" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class = "book book-1"></div>
+                    <div class = "book book-2"></div>
+                    <div class = "book book-3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sectionDiv" id="about">
+            <div style="margin-bottom: 30px;" data-aos="fade-right" data-aos-duration="600" data-aos-delay="200">
+              <h1 style = "font-size: 45px;">About Us</h1>
+              <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            </div>
+            <div class="perksDiv">
+              <div class="perk-wrapper" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="400">
+                <div class="perk">
+                  <i class="fas fa-bolt"></i>
+                  <h1>Hassle-Free</h1>
+                  <hr>
+                  <p>Lorem Ipsum</p>
+                </div>
+              </div>
+              <div class="perk-wrapper" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
+                <div class="perk">
+                  <i class="fa-solid fa-users"></i>
+                  <h1>User-Friendly</h1>
+                  <hr>
+                  <p>Lorem Ipsum</p>
+                </div>
+              </div>
+              <div class="perk-wrapper" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="800">
+                <div class="perk">
+                  <i class="fa-solid fa-stopwatch"></i>
+                  <h1>Instant Pairing</h1>
+                  <hr>
+                  <p>Lorem Ipsum</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class = "sectionDiv" id = "services">
+
+          <h1 style = "font-size: 45px; width: 100%; margin-bottom: 10px;">Services</h1>
+
+          <div class = "card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+            <div class = "imageDiv Limg">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class = "textDiv Ltxt">
+                <h2>Security</h2>
+                <p>Ensuring the security of your digital assets and personal information is our top priority. Our cutting-edge security solutions employ the latest technology and encryption methods to safeguard your data. You can rest easy knowing that your online activities are protected against threats and unauthorized access.</p>
+            </div>
+          </div>
+
+          <div class = "card cardr" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+            <div class = "imageDiv Rimg">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class = "textDiv Rtxt">
+                <h2>Security</h2>
+                <p>Ensuring the security of your digital assets and personal information is our top priority. Our cutting-edge security solutions employ the latest technology and encryption methods to safeguard your data. You can rest easy knowing that your online activities are protected against threats and unauthorized access.</p>
+            </div>
+          </div>
+
+          <div class = "card" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+            <div class = "imageDiv Limg">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class = "textDiv Ltxt">
+                <h2>Security</h2>
+                <p>Ensuring the security of your digital assets and personal information is our top priority. Our cutting-edge security solutions employ the latest technology and encryption methods to safeguard your data. You can rest easy knowing that your online activities are protected against threats and unauthorized access.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <footer>
+          <p>© book-exchange-website, 2023</p>
+        </footer>
+    </main>
+
+    <button class = "downBtn"><i class="fa-solid fa-arrow-down"></i></button>
+
+    <script src = "/landingPage/landingPage.js"></script>
+</body>
+</html>
