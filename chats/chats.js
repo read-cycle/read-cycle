@@ -38,7 +38,7 @@ function applyTheme(theme) {
 
     const newLink = document.createElement("link");
     newLink.rel = "stylesheet";
-    newLink.href = `/chats/${theme}.css`;
+    newLink.href = `${theme}.css`;
     newLink.classList.add("theme-stylesheet");
     document.head.appendChild(newLink);
 }

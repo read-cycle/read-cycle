@@ -73,7 +73,7 @@ function applyTheme(theme) {
 
     const newLink = document.createElement("link");
     newLink.rel = "stylesheet";
-    newLink.href = `/dashboard/${theme}.css`;
+    newLink.href = `${theme}.css`;
     newLink.classList.add("theme-stylesheet");
     document.head.appendChild(newLink);
 }
